@@ -1,0 +1,16 @@
+input {
+    border-style: none;
+    border-radius: 5px;
+    padding: 8px 30px;
+    width: 100%;
+    font-size: 1.02rem;
+    color: whitesmoke;
+}
+
+.add-button {
+    background-color: rgb(10, 87, 10);
+}
+
+.remove-button {
+    background-color: rgb(212, 88, 66);
+}
