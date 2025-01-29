@@ -1,0 +1,21 @@
+.update-quantity {
+    width: 30%;
+    display: flex;
+    gap: 5px;
+    margin-right: 10px;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.product-name {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}

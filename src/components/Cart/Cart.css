@@ -1,0 +1,15 @@
+.cart-container {
+    background-color: rgb(243, 243, 211);
+    position: fixed;
+    top: 75px;
+    right: 0;
+    width: 25%;
+    padding: 20px 0 0 20px;
+    border-color: rgb(212, 88, 66);
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.cart-container h3, .total-price {
+    text-align: center;
+}
