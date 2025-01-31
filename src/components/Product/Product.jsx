@@ -1,11 +1,23 @@
 import React from 'react'
 import Button from "../Button/Button"
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, removeProduct } from "../../features/cart/slice"
+import { selectCartProducts } from "../../features/cart/selectors"
 
 import "./Product.css"
 
 
 export default function Product({ product }) {
   const MAX_DESCRIPTION =  150 
+  const dispatch = useDispatch();
+  const cartProducts = useSelector(selectCartProducts);
+
+  const getProductInCart = (productId) => {
+    return cartProducts.find(
+        product => product.id === productId
+    )
+}
+
   return (
     <div className='product-container'>
         <img src={product.image} alt="Product Image" />
@@ -18,8 +30,16 @@ export default function Product({ product }) {
         </div>
         <div className='action-buttons'>
           <p className='product-price'>{product.price} €</p>
-            <Button type="add" name="Ajouter Au Panier"/>
-            <Button type="remove" name="Retirer du Panier"/>
+            <Button 
+              type="add" 
+              name="Ajouter Au Panier"
+              onClick={ () => dispatch(addProduct(product.id))}
+            />
+            {getProductInCart(product.id) &&(<Button 
+              type="remove" 
+              name="Retirer du Panier"
+              onClick={ () => dispatch(removeProduct(product.id))}
+            />)}
         </div>
     </div>
   )

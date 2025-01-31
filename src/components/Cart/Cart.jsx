@@ -17,6 +17,10 @@ export default function Cart() {
         dispatch(toogleShowCart());
     }
 
+    const cartTotal = cartProducts.reduce(
+        (sum, product) => sum + product.quantity*product.price, 0
+    );
+
     if ( !showCart) {
         return (
             <div className='display-cart-container'>
@@ -47,17 +51,19 @@ export default function Cart() {
                     <div className="close-cart">
                         <img 
                         src={closeIcon} alt=""
-                        onClick={ () => alert("close me")}
+                        onClick={runToogleShowCart}
                         />
                     </div>
                     <h3>Voici votre Panier</h3>
                     <div className="line"></div>
                     <div className='cart-products'> 
-                        {numbers.map(num => <CartItem key={num}/>)}
+                        {cartProducts.map(product => (
+                            <CartItem key={product.id} product={product}/>
+                        ))}
                     </div>
                     <div className="line"></div>
                     <div className="total-price">
-                        <h4>Total Price: 45 €</h4>
+                        <h4>Total Price: {cartTotal} €</h4>
                     </div>
                 </div>
             )}
