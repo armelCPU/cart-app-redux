@@ -15,9 +15,9 @@ export default function Product({ product }) {
             </h3>
             <h4>{product.category}</h4>
             <p className='product-description'>{product.description.length > MAX_DESCRIPTION ? product.description.substring(0, MAX_DESCRIPTION) + "..." : product.description} </p>
-            <p className='product-price'>{product.price} €</p>
         </div>
         <div className='action-buttons'>
+          <p className='product-price'>{product.price} €</p>
             <Button type="add" name="Ajouter Au Panier"/>
             <Button type="remove" name="Retirer du Panier"/>
         </div>

@@ -14,3 +14,9 @@ input {
 .remove-button {
     background-color: rgb(212, 88, 66);
 }
+
+.show-cart-button {
+    background-color: rgb(231, 247, 248);
+    color: rgb(88, 53, 53);
+
+}

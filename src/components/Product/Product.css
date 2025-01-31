@@ -21,6 +21,7 @@
     display: flex;
     gap: 5px;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .product-infos h3, .product-infos h4, .product-infos p  {
@@ -45,4 +46,8 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.action-buttons p {
+    margin: 0;
 }

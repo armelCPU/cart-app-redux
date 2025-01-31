@@ -1,18 +1,55 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./Cart.css"
 import CartItem from '../CartItem/CartItem';
-import { selectCartProducts } from "../../features/cart/selectors"
+import Button from '../Button/Button';
+import { selectCartProducts, selectShowCart } from "../../features/cart/selectors"
+import { toogleShowCart } from "../../features/cart/slice"
+import closeIcon from "../../assets/close.png"
+
 
 export default function Cart() {
+    const dispatch = useDispatch();
     const cartProducts = useSelector(selectCartProducts);
-    
+    const showCart = useSelector(selectShowCart);
+
+    const runToogleShowCart = () => {
+        dispatch(toogleShowCart());
+    }
+
+    if ( !showCart) {
+        return (
+            <div className='display-cart-container'>
+                <Button 
+                    type="show-cart" 
+                    name="Afficher le Panier"
+                    onClick={runToogleShowCart}
+                /> 
+            </div>
+        )
+    }
+
     return (
         <div className="cart-container">
-            { cartProducts.length == 0 &&  <p>Cart is empty ...</p>}
+            { cartProducts.length == 0 &&  (
+                <div>
+                    <div className="close-cart">
+                        <img 
+                        src={closeIcon} alt=""
+                        onClick={runToogleShowCart}
+                        />
+                    </div>
+                    <p>Cart is empty ...</p>
+                </div>
+            )}
             { cartProducts.length > 0 && (
                 <div className="cart-detail">
+                    <div className="close-cart">
+                        <img 
+                        src={closeIcon} alt=""
+                        onClick={ () => alert("close me")}
+                        />
+                    </div>
                     <h3>Voici votre Panier</h3>
                     <div className="line"></div>
                     <div className='cart-products'> 
