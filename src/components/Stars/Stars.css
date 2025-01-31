@@ -1,0 +1,33 @@
+.star-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .star {
+    font-size: 1.2em;
+    margin-right: 2px;
+  }
+  
+  .star.full {
+    color: gold;
+  }
+  
+  .star.half {
+    background: linear-gradient(90deg, 
+        gold calc(var(--decimal-percentage, 0%)), 
+        #ccc calc(var(--decimal-percentage, 0%))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .star.empty {
+    color: #ccc;
+  }
+  
+  .rating-number {
+    margin-left: 5px;
+    color: #666;
+    font-size: 0.9em;
+  }
