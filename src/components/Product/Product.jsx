@@ -8,7 +8,7 @@ export default function Product({ product }) {
   const MAX_DESCRIPTION =  150 
   return (
     <div className='product-container'>
-        <img src={product.image} alt=" Product Image" />
+        <img src={product.image} alt="Product Image" />
         <div className='product-infos'>
             <h3>
                 {product.title}
