@@ -3,7 +3,13 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
     products: [],
     loading: false,
-    error: null
+    error: null,
+    filterValues: {
+        category: "",
+        priceMin: undefined,
+        priceMax: undefined,
+        search: ""
+    }
 };
 
 const productsSlice = createSlice({
@@ -21,8 +27,12 @@ const productsSlice = createSlice({
         setError: (state, action) => {
             state.error = action.payload
         },
+
+        setFilterValues: (state, action) => {
+            state.filterValues = action.payload;
+        }
     }
 });
 
-export const { setProducts, setLoading, setError } = productsSlice.actions;
+export const { setProducts, setLoading, setError, setFilterValues } = productsSlice.actions;
 export default productsSlice.reducer;

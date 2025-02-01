@@ -9,11 +9,11 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export function useFetchProducts() {
     const dispatch = useDispatch();
-
     const {data, error, isLoading} = useSWR("https://fakestoreapi.com/products", fetcher);
 
     useEffect( () => {
         if (data) {
+            
             dispatch(setProducts(data));
             dispatch(setAllProducts(data));
         }
