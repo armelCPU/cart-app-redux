@@ -1,0 +1,39 @@
+.total-container {
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    padding: 15px;
+}
+
+.sub-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #000;
+    line-height: 1.1;
+}
+
+.payment-logos i {
+    font-size: 40px; /* Ajuste la taille */
+    margin-right: 10px;
+}
+
+.fa-cc-visa {
+    color: #142787; /* Bleu Visa */
+}
+
+.fa-cc-mastercard {
+    color: #EB001B; /* Rouge Mastercard */
+    background: linear-gradient(to right, #EB001B 50%, #FF5F00 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-cc-paypal {
+    color: #253B80; /* Bleu PayPal */
+}
+
+.fa-cc-apple-pay {
+    color: black; /* Apple Pay est toujours noir */
+}

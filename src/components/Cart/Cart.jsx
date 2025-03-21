@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./Cart.css"
 import CartItem from '../CartItem/CartItem';
@@ -23,13 +24,19 @@ export default function Cart() {
 
     if ( !showCart) {
         return (
-            <div className='display-cart-container'>
+            <>
+                <div className='display-cart-container'>
                 <Button 
                     type="show-cart" 
                     name="Afficher le Panier"
                     onClick={runToogleShowCart}
                 /> 
-            </div>
+                </div>
+
+                <div className='buy-cart-container'>
+                    <Link to="/cart">Payer le Panier</Link>
+                </div>
+            </>
         )
     }
 

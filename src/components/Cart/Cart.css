@@ -21,6 +21,13 @@
     width: 15%;
 }
 
+.buy-cart-container {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 15%;
+}
+
 .close-cart {
     display: flex;
     flex-direction: row-reverse;
