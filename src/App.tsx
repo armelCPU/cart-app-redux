@@ -1,19 +1,18 @@
-import Products from "./components/Products/Products"
-import Cart from "./components/Cart/Cart"
-import SearchBar from "./components/SearchBar/SearchBar"
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./views/Home/Home";
+import About from './views/About/About';
 
 function App() {
 
   return (
-    <div className="main-container">
-      
-      <h1>Achetez vos produits</h1>
-      <SearchBar />
-      <Products/>
-      <Cart />
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
+
